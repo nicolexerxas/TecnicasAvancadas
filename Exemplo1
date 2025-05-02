@@ -29,7 +29,7 @@ public class MinhaJanela extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MinhaJanela frame = new MinhaJanela();
+					MinhaJanela frame = new MinhaJanela(); // Cria a janela
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,16 +44,21 @@ public class MinhaJanela extends JFrame {
 	public MinhaJanela() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 321, 252);
+
+		// Painel principal da janela
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		
+
+		// Painel superior (central da janela)
 		JPanel panelTop = new JPanel();
 		panelTop.setBackground(Color.PINK);
 		panelTop.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		contentPane.add(panelTop, BorderLayout.CENTER);
+
+		// Layout do painel superior
 		FlowLayout fl_panelTop = new FlowLayout(FlowLayout.CENTER, 5, 5);
 		fl_panelTop.setAlignOnBaseline(true);
 		panelTop.setLayout(fl_panelTop);
@@ -61,11 +66,13 @@ public class MinhaJanela extends JFrame {
 		JLabel labelUsuario = new JLabel("Usuário");
 		labelUsuario.setFont(new Font("Tahoma", Font.BOLD, 25));
 		panelTop.add(labelUsuario);
-		
+
+		// Campo de texto para o usuário
 		textFieldUsuario = new JTextField();
 		panelTop.add(textFieldUsuario);
 		textFieldUsuario.setColumns(10);
-		
+
+		// Campo de texto para a senha
 		JLabel labelSenha = new JLabel("Senha");
 		labelSenha.setFont(new Font("Tahoma", Font.BOLD, 25));
 		panelTop.add(labelSenha);
@@ -74,14 +81,15 @@ public class MinhaJanela extends JFrame {
 		panelTop.add(textField);
 		textField.setColumns(10);
 
+		// Painel inferior (parte de baixo da janela)
 		Panel panelBottom = new JPanel();
 		panelBottom.setBackground(Color.PINK);
 		panelBottom.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		contentPane.add(panelBottom, BorderLayout.SOUTH);
-
+			// Botão "Autenticar"
 		JButton buttonAutenticar = new JButton("Autenticar");
 		panelBottom.add(buttonAutenticar);
-
+			// Botão "Limpar"
 		JButton buttonLimpar = new JButton("Limpar");
 		panelBottom.add(buttonLimpar);
 	}
