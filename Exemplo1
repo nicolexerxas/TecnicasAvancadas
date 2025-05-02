@@ -81,3 +81,10 @@ public class MinhaJanela extends JFrame {
 
 		JButton buttonAutenticar = new JButton("Autenticar");
 		panelBottom.add(buttonAutenticar);
+
+		JButton buttonLimpar = new JButton("Limpar");
+		panelBottom.add(buttonLimpar);
+	}
+
+}
+
